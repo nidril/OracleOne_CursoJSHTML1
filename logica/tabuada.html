@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    for (var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+        var resultado = multiplicador * 7
+        mostra("7 x " + multiplicador + " = " + resultado)
+    }
+    
+    pulaLinha()
+    
+    //no caso do while seria assim:
+    var multiplicador = 1;
+    while (multiplicador <= 10) {
+        var resultado = multiplicador * 7
+        mostra("7 x " + multiplicador + " = " + resultado)
+        multiplicador++
+    }
+
+</script>
