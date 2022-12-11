@@ -10,14 +10,34 @@
 
     function adicionaNumero(quantidade){
         //quantidade é o parametro passado na função segredos
-        var array = []
+        var array = [];
         //crio um array pra receber os numeros gerados, ele inicia vazio
-        var controle = 1
+        var controle = 1;
         //variavel para controlar o numero de vezes que a função repetirá
 
         while (controle <= quantidade) {
-            array.push(sorteiaNumero());
-            controle++;
+            var numeroAleatorio = sorteiaNumero();
+            //criamos a variavel para poder conferir se o numero é repetido
+            
+            if (numeroAleatorio !== 0){
+                var achou = false;
+                //é preciso percorrer o array para saber se o numero que ele achou será true ou false
+                for (var i=0; i < array.length; i++) {
+                    if(array[i] == numeroAleatorio) {
+                        achou = true;
+                        break;
+                        //se o numero for repetido ele para a ação
+                    }
+                }
+
+                if (achou == false) {
+                    //o push só vai ser executado se o número não for repetido
+                    array.push(numeroAleatorio);
+                    //agora o push acrescenta um numero a variavel, que por sua vez chama a função math random
+                    controle++;
+                }
+            }
+    
         }
         return array;
         //retonar o array para que ele envie os numeros para 'segredos'
