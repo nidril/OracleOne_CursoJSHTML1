@@ -4,7 +4,31 @@
 <button>Compare com o meu segredo</button>
 
 <script>
-    var segredo = Math.round(Math.random() * 10);
+    function sorteiaNumero(){
+        return Math.round(Math.random() * 10);
+    }
+
+    function adicionaNumero(quantidade){
+        //quantidade é o parametro passado na função segredos
+        var array = []
+        //crio um array pra receber os numeros gerados, ele inicia vazio
+        var controle = 1
+        //variavel para controlar o numero de vezes que a função repetirá
+
+        while (controle <= quantidade) {
+            array.push(sorteiaNumero());
+            controle++;
+        }
+        return array;
+        //retonar o array para que ele envie os numeros para 'segredos'
+        //que está fora da função (return manda pra fora o valor)
+    }
+
+    var segredos = adicionaNumero(3);
+    //agora 'segredos' é um array que receberá vários números
+    //a quantidade de numeros adicionados virá da função
+
+    console.log(segredos);
 
     var caixa = document.querySelector("input");
     //seleciona o conteúdo de input e guarda na variável
